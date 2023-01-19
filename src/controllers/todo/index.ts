@@ -10,6 +10,10 @@ export const getTODO = (request, response) => {
 }
 
 export const getMovies = (request, response) => {
-  const moviesRepository = getRepository(Movies).find()
-  return response.json(moviesRepository)
+  try {
+    const moviesRepository = getRepository(Movies)
+    return response.json(moviesRepository)
+  } catch (err) {
+    return response.json({ message: "error" })
+  }
 }
