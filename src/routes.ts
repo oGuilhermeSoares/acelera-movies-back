@@ -4,6 +4,7 @@ import {
   getMovies,
   getUsers,
   getIdMovies,
+  postMovies,
 } from "@controllers/todo"
 
 export const defineRoutes = (app) => {
@@ -12,4 +13,5 @@ export const defineRoutes = (app) => {
   app.get("/movies", getMovies)
   app.get("/login", getUsers)
   app.get("/movies/:id", getIdMovies)
+  app.post("/movie", postMovies)
 }

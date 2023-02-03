@@ -39,3 +39,13 @@ export const getIdMovies = async (request, response) => {
     return response.status(500).json({ message: "error" })
   }
 }
+
+export const postMovies = async (req, res) => {
+  try {
+    const movieRepository = await getRepository(Movies)
+    const createMovies = movieRepository.save(req.body)
+    return res.status(200).json(createMovies)
+  } catch (e) {
+    return res.status(500).json({ message: "error" })
+  }
+}
