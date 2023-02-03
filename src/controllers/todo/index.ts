@@ -28,3 +28,14 @@ export const getUsers = async (request, response) => {
   }
   return response.status(400).json({ message: "error" })
 }
+
+export const getIdMovies = async (request, response) => {
+  try {
+    const { id } = request.params
+    const moviesRepository = await getRepository(Movies)
+    const findIdMovies = moviesRepository.findOne(id)
+    return response.status(200).json(findIdMovies)
+  } catch (error) {
+    return response.status(500).json({ message: "error" })
+  }
+}
