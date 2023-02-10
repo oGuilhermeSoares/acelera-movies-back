@@ -1,5 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm"
 @Entity()
 export class Movies {
   @PrimaryGeneratedColumn()
@@ -12,7 +17,7 @@ export class Movies {
   gender: String
 
   @Column({ name: "classification", type: "varchar" })
-  classfication: String
+  classification: String
 
   @Column({ name: "subtitle", type: "varchar" })
   subtitle: String
@@ -20,8 +25,8 @@ export class Movies {
   @Column({ name: "image", type: "varchar" })
   image: String
 
-  @Column({ name: "realeaseDate", type: "varchar" })
-  realeseDate: String
+  @Column({ name: "releaseDate", type: "varchar" })
+  releaseDate: String
 
   @Column({ name: "director", type: "varchar" })
   director: String
@@ -33,13 +38,13 @@ export class Movies {
   studio: String
 
   @Column({ name: "actor", type: "varchar" })
-  actor: [String]
+  actor: String
 
   @Column({ name: "resume", type: "varchar" })
   resume: String
 
   @Column({ name: "awards", type: "varchar" })
-  awards: [String]
+  awards: String
 
   @Column({ name: "note", type: "int" })
   note: Number
